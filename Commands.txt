@@ -1,0 +1,42 @@
+Thinkspeak Public Channel Link:
+
+    https://thingspeak.com/channels/2604163
+    
+--------------------------------------------------------
+
+
+Command to Zip current directory with its subdirectories:
+
+	zip -r archive_name.zip ./*
+
+
+
+Generate the requirements.txt file of the "Venv":
+
+	pip freeze > requirements.txt
+
+
+--------------------------------------------------------
+
+General Commands:- Terminal Linux
+
+
+Create & Activate venv:
+
+	python3 -m venv my_project
+
+	source venv/bin/activate
+
+--------------------------------------------------------
+
+
+python --version
+
+pip install package_name
+
+ls
+
+cd repo_name
+
+nano file_name
+

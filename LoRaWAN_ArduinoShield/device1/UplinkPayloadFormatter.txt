@@ -1,0 +1,47 @@
+function Decoder(bytes, port) {
+    var address = 1;
+    var flag = bytes[0];
+    var url = "https://maps.app.goo.gl/a1EZ1mHrP3hEcFyg6?g_st=ic";
+    if (flag === 2){ address = 0, url = "-No Data-" }
+    var data1 = bytes[1];
+    var data2 = bytes[2];
+    var data3 = bytes[3];
+    var value = (address * 1000) + (data1 * 100) + (data2 * 10) + data3;
+    var result = {}; // Initialize result object
+
+    if (flag != 3) {
+      
+        result = {
+            field1: address,
+            field2: value,
+            field3: data1,
+            field4: data2,
+            field5: data3,
+            
+            status: url,
+            Address: address,
+            Flag: flag
+        };
+
+        if (data1 === 1) {
+            result.Elephant = "Alert!";
+        } else if (data1 === 0) {
+            result.Elephant = "-";
+        }
+
+        if (data2 === 1) {
+            result.Cheetah = "Alert!";
+        } else if (data2 === 0) {
+            result.Cheetah = "-";
+        }
+
+        if (data3 === 1) {
+            result.WildBoar = "Alert!";
+        } else if (data3 === 0) {
+            result.WildBoar = "-";
+        }
+    }
+    else result.Value = "No Detection!"
+
+    return result;
+}
